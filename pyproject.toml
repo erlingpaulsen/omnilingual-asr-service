@@ -1,0 +1,20 @@
+[project]
+name = "omnilingual-asr-service"
+version = "0.1.0"
+description = "FastAPI with UI on top of Meta Omnilingual ASR"
+authors = [
+    {name = "Erling Singstad Paulsen"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "omnilingual-asr (>=0.1.0,<0.2.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
