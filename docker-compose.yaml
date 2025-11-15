@@ -1,0 +1,16 @@
+services:
+  omnilingual-asr:
+    build: .
+    container_name: omnilingual-asr
+    ports:
+      - "8000:8000"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - ASR_MODEL_CARD=omniASR_LLM_1B
+      - MAX_CHUNK_SECONDS=30.0
+      - MAX_FILE_SECONDS=3600.0
+    volumes:
+      - ./model_cache:/root/.cache/fairseq2/assets
+    gpus: all
+    restart: unless-stopped
